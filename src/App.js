@@ -1,11 +1,16 @@
 
+import CardWidget from './components/CardWidget';
+import ItenrListContainer from './components/ItenrListContainer';
 import NavBar from './components/NavBar';
+import './App.css';
 
 function App() {
   return (
     <div>
       <NavBar />
-      <h1>APPP REACT</h1>
+      <br />
+      <ItenrListContainer />
+      
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import LOGO from '../imgs/LOGO.jpg'
+import CardWidget from './CardWidget';
 
 function NavBar() {
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <img src={LOGO} alt='logo' width="100" border='primary'></img>
+          <img src={LOGO} alt='logo' width="100" ></img>
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">PetyS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +23,9 @@ function NavBar() {
                         </li>
                     </ul>
                 </div>
+                <CardWidget />
             </div>
+            
 </nav>
     );
   }
