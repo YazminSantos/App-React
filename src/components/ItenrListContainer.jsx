@@ -5,7 +5,7 @@ export default function ItenrListContainer() {
     
   return (
 
-    <h2 className=''>Saludos </h2>
+    <h2 >Saludos </h2>
 
   )
 }

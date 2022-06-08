@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react';
 export default function ItemCount() {
     const [x,setx] = useState (0)//hook funcion dentro de la clase 
     const [carr1,setcarr1]=useState(0)
-   
-   
+    const [n,setn]=useState(0)
+    
+    useState(()=>{
+        setn(prompt("Ingrese el stock disponible: "))
+        
+         })
     
  useEffect(() => {
-    if (carr1==11){
+    if (carr1>=n){
         alert ('No hay más stock, elige menos')
        }
     else{
@@ -15,10 +19,19 @@ export default function ItemCount() {
     }
 },[carr1]);
 
+
+
+//n=prompt("Ingrese el stock disponible: ")
+    
+
     return (
       
+     
+
     <div style={{border: '1px solid #13B89A', width:'250px', height:'150px',paddingLeft:'0px',paddingRight:'30px',background:'#10E19C'}}>
-       STOCK:10 
+       
+       
+       STOCK: {n}
         <br />
         <div style={{textAlign: 'center'}}>
             <div style={{background:'white', textAlign: 'center', width:'230px'}}>
