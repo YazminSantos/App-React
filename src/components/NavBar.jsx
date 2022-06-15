@@ -1,34 +1,64 @@
 import LOGO from '../imgs/LOGO.jpg'
-import CardWidget from './CardWidget';
+//import CartWidget from './CartWidget'
 
-function NavBar() {
-    return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <img src={LOGO} alt='logo' width="100" ></img>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">PetyS</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
-                        </li>
-                    </ul>
-                </div>
-                <CardWidget />
-            </div>
-            
-</nav>
-    );
-  }
-  
-  export default NavBar;
-  
+import React from "react";
+import { Link } from "react-router-dom";
+import CssBaseline from "@mui/material/CssBaseline";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import NavBarMobile from "./NavBarMob";
+import NavBarDesktop from "./NavBarDesk";
+
+
+const LinkWithoutDec = (props)=>{
+  return <Link {...props} style={{textDecoration:"none", color:"unset"}}></Link>
+};
+
+const pages = [
+  {
+    link: <LinkWithoutDec to="/HOME">Home</LinkWithoutDec>,
+    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/HOME">HOME</LinkWithoutDec></Button>
+  },
+  {
+    link: <LinkWithoutDec to="/aboutPets">Products</LinkWithoutDec>,
+    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/aboutPets">about your pets</LinkWithoutDec></Button>
+  },
+  {
+    link: <LinkWithoutDec to="/about">About us</LinkWithoutDec>,
+    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/about">About us</LinkWithoutDec></Button>
+  },
+];
+const settings = ["Profile", "Logout"];
+
+const NavBar = ({cartQuantity}) => {
+  return (
+    <>
+      <CssBaseline />
+      <AppBar position="static" style={{background:'black'}}>
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              display: { sm: "flex", md: "none" },
+            }}
+          >
+            <NavBarMobile navPages={pages} cartQuantity={cartQuantity} />
+          </Box>
+          <Box
+            sx={{
+              display: { sm: "none", md: "block" },
+            }}
+          >
+            <NavBarDesktop
+              pages={pages}
+              settings={settings}
+              cartQuantity={cartQuantity}
+            />
+          </Box>
+        </Container>
+      </AppBar>
+    </>
+  );
+};
+export default NavBar;

@@ -7,7 +7,6 @@ export default function ItemCount() {
     
     useState(()=>{
         setn(prompt("Ingrese el stock disponible: "))
-        
          })
     
  useEffect(() => {
@@ -28,7 +27,7 @@ export default function ItemCount() {
       
      
 
-    <div style={{border: '1px solid #13B89A', width:'250px', height:'150px',paddingLeft:'0px',paddingRight:'30px',background:'#10E19C'}}>
+    <div style={{border: '1px solid #13B89A', width:'250px', height:'150px',marginLeft:'30px',paddingLeft:'0px',paddingRight:'30px',background:'#10E19C'}}>
        
        
        STOCK: {n}
