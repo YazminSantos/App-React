@@ -43,7 +43,7 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
                     }
 
                     return setLoading(false);
-                }, 1500);
+                }, 20000);
             })
             .catch((err) => {
                 setLoading(false);

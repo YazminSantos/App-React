@@ -42,7 +42,7 @@ export default function ItemList({ onAdd, onRemove, category }) {
                     
                     setLoading(false);
                     return setProducts(categoryProducts);
-                }, 1500);
+                }, 2000);
             })
             .catch((err) => {
                 setLoading(false);

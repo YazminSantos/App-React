@@ -12,11 +12,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Cart from './components/Card/cart';
 
 
-const darkTheme = createTheme({
-  palette: {
-    mode: rgba(255, 255, 255, 0.3),
-  },
-});
+
 
 
   function App() {
@@ -34,7 +30,7 @@ const darkTheme = createTheme({
     <div>
       
       <Router>
-        <ThemeProvider theme={darkTheme}>
+        
           <NavBar cartQuantity={cartQuantity} />
           <Routes>
             <Route path="/" element={<MainLanding onAdd={handleAddCartQuantity} onRemove={handleRemoveCartQuantity} />} />
@@ -47,7 +43,7 @@ const darkTheme = createTheme({
           </Routes>
         <br />
           <Footer />
-        </ThemeProvider>
+        
       </Router>
        
     </div>

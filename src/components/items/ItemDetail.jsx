@@ -11,7 +11,7 @@ const ItemDetail = ({ product, onAdd, onRemove }) => {
                 spacing={2}
                 sx={{
                     display: "flex",
-                    justifyContent: "center",
+                    justifyContent: "left",
                     alignItems: "center",
                     mt: 3,
                 }}
@@ -22,7 +22,7 @@ const ItemDetail = ({ product, onAdd, onRemove }) => {
                     md={4}
                     sx={{
                         display: "flex",
-                        justifyContent: "center",
+                        justifyContent: "left",
                         alignItems: "center",
                     }}
                 >
@@ -44,7 +44,7 @@ const ItemDetail = ({ product, onAdd, onRemove }) => {
                     md={4}
                     sx={{
                         display: "flex",
-                        justifyContent: "center",
+                        justifyContent: "left",
                         alignItems: "center",
                     }}
                 >
