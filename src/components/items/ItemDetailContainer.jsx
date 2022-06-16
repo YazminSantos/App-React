@@ -31,7 +31,7 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         fetch("https://mocki.io/v1/e610ac09-f815-4219-8b0f-32d73743e81d")
-            .then((response) => response.json())
+            .then((response) => response.json()) // promesa función callback
             .then((result) => {
                 setTimeout(() => {
                     const productFiltered = result.find(
@@ -43,9 +43,9 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
                     }
 
                     return setLoading(false);
-                }, 20000);
+                }, 20000);//2seg
             })
-            .catch((err) => {
+            .catch((err) => {//error
                 setLoading(false);
                 handleErrorOpen();
                 console.log(err);

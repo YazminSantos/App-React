@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import ItemListContainer from "./ItemListContainer";
 
+
 const CategoryListContainer = ({ onAdd, onRemove }) => {
     const [category, setCategory] = useState({});
     const { id } = useParams();
@@ -11,7 +12,7 @@ const CategoryListContainer = ({ onAdd, onRemove }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         fetch("https://mocki.io/v1/78ba0041-2320-4720-adee-d275ba062cd2")
-            .then((response) => response.json())
+            .then((response) => response.json())//promise
             .then((result) => {
                 const categoryFiltered = result.filter(category => category.id === +id);
 

@@ -25,8 +25,9 @@ import Cart from './components/Card/cart';
     const handleRemoveCartQuantity = (count) => {
       setCartQuantity(cartQuantity - count);
     }
-
+ 
   return (
+
     <div>
       
       <Router>

@@ -11,6 +11,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ItemCount from "./ItemCount";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import PELOTA from '../../imgs/pelotaJ.jpg';
+import find from '../../imgs/find.jpg'
+import Roll from '../../imgs/Roll.jpg'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -59,7 +62,7 @@ export default function Item({ product, onAdd, onRemove }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} >
       <CardMedia component="img" alt={title} height="240" image={pictureUrl} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
