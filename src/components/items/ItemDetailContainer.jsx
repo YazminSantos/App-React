@@ -21,29 +21,22 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
     const handleErrorOpen = () => {
         setError(true);
     };
-    const handleErrorClose = (_event, reason) => {
-        if (reason === "clickaway") {
-            return;
-        }
-        setError(false);
-    };
+//    const handleErrorClose = (_event, reason) => {
+//        if (reason === "clickaway") {
+//            return;
+//        }
+//        setError(false);
+//    };
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-        fetch("https://mocki.io/v1/e610ac09-f815-4219-8b0f-32d73743e81d")
-            .then((response) => response.json()) // promesa función callback
-            .then((result) => {
-                setTimeout(() => {
-                    const productFiltered = result.find(
-                        (productFilter) => productFilter.id === id
-                    );
-
-                    if (productFiltered !== undefined) {
-                        setProduct(productFiltered);
-                    }
-
-                    return setLoading(false);
-                }, 20000);//2seg
+        //window.scrollTo(0, 0);
+            setLoading(true);
+            getProduct(id)
+            .then(productFiltered => {
+                if (productFiltered !== undefined) {
+                    setProduct(productFiltered);
+                }
+                return setLoading(false);
             })
             .catch((err) => {//error
                 setLoading(false);
@@ -91,7 +84,7 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
                     <Navigate to="/notFound" replace={true} />
                 )}
                 {!loading && (
-                    <ItemDetail product={product} onAdd={onAdd} onRemove={onRemove} />
+                    <ItemDetail product={product} />
                 )}
             </Grid>
         </Container>

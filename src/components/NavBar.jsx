@@ -18,12 +18,12 @@ const LinkWithoutDec = (props)=>{
 
 const pages = [
   {
-    link: <LinkWithoutDec to="/HOME">Home</LinkWithoutDec>,
-    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/HOME">HOME</LinkWithoutDec></Button>
+    link: <LinkWithoutDec to="/PIECES">PIECES</LinkWithoutDec>,
+    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/PIECES">PIECES</LinkWithoutDec></Button>
   },
   {
-    link: <LinkWithoutDec to="/aboutPets">Products</LinkWithoutDec>,
-    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/aboutPets">about your pets</LinkWithoutDec></Button>
+    link: <LinkWithoutDec to="/categories">Categories</LinkWithoutDec>,
+    link_desktop: <Button sx={{ my: 2, color: "white", display: "block" }}><LinkWithoutDec to="/categories">Categories</LinkWithoutDec></Button>
   },
   {
     link: <LinkWithoutDec to="/about">About us</LinkWithoutDec>,

@@ -35,6 +35,7 @@ const ItemDetailDescription = ({ product, onAdd, onRemove }) => {
     const handleAddToCart = () => {
         if (stock >= countItem) {
             setShowAdd(false);
+            product.quantity = countItem;
             onAdd(countItem);
         } else {
             handleOpenStockError();
@@ -43,7 +44,7 @@ const ItemDetailDescription = ({ product, onAdd, onRemove }) => {
 
     const handleRemove = () => {
         setShowAdd(true);
-        onRemove(countItem);
+        onRemove(product.id);
     };
 
     const handleAddItem = () => {

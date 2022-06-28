@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import ItemDetailDescription from "./ItemDetailDescription.jsx";
 
-const ItemDetail = ({ product, onAdd, onRemove }) => {
+const ItemDetail = ({ product}) => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid
@@ -35,7 +35,7 @@ const ItemDetail = ({ product, onAdd, onRemove }) => {
                         }}
                         component="img"
                         alt={product.title}
-                        src={product.pictureUrl}
+                        src={product.picture_Url}
                     />
                 </Grid>
                 <Grid
@@ -50,8 +50,6 @@ const ItemDetail = ({ product, onAdd, onRemove }) => {
                 >
                     <ItemDetailDescription
                         product={product}
-                        onAdd={onAdd}
-                        onRemove={onRemove}
                     />
                 </Grid>
             </Grid>
