@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getCategories } from '../../firebase/TstItem';
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
-const CategoriaListC = () => {
+const CategoriesListC = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("https://mocki.io/v1/78ba0041-2320-4720-adee-d275ba062cd2")
-            .then((data) => data.json())
+        getCategories()
             .then((result) => {
                 return setCategories(result);
             })
@@ -29,7 +29,7 @@ const CategoriaListC = () => {
             }}
         >
             {categories.map((category) => (
-                <Link to={("/category/")+category.id} key={category.id}>
+                <Link to={("/category/")+category.key} key={category.id}>
                     <Box
                         sx={{
                             width:"100%"
@@ -45,4 +45,4 @@ const CategoriaListC = () => {
     );
 };
 
-export default CategoriaListC;
+export default CategoriesListC;

@@ -2,25 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import ItemListContainer from "./ItemListContainer";
+import ItemListContainer from "../items/ItemListContainer";
+import { getCategory } from "../../firebase/TstItem";
 
-
-const CategoryListContainer = ({ onAdd, onRemove }) => {
+const CategoryListContainer = () => {
     const [category, setCategory] = useState({});
     const { id } = useParams();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-        fetch("https://mocki.io/v1/78ba0041-2320-4720-adee-d275ba062cd2")
-            .then((response) => response.json())//promise
-            .then((result) => {
-                const categoryFiltered = result.filter(category => category.id === +id);
-
-                if (Object.keys(categoryFiltered).length !== 0) {
-                    setCategory(categoryFiltered[0]);
-                }
-
-            })
+        getCategory(id)
+            .then(category => setCategory(category))
             .catch((error) => {
                 console.log(error);
             });
@@ -41,7 +32,7 @@ const CategoryListContainer = ({ onAdd, onRemove }) => {
                 alt={category.name}
                 src={category.banner_image}
             />
-            <ItemListContainer onAdd={onAdd} onRemove={onRemove} category={id} />
+            <ItemListContainer category={id} />
         </Container>
     )
 }

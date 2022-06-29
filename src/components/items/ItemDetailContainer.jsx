@@ -7,6 +7,8 @@ import ItemDetail from "./ItemDetail";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import MuiAlert from "@mui/material/Alert";
+import {getProduct} from '../../firebase/TstItem';
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -21,12 +23,12 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
     const handleErrorOpen = () => {
         setError(true);
     };
-//    const handleErrorClose = (_event, reason) => {
-//        if (reason === "clickaway") {
-//            return;
-//        }
-//        setError(false);
-//    };
+    const handleErrorClose = (_event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+        setError(false);
+    };
 
     useEffect(() => {
         //window.scrollTo(0, 0);
@@ -44,6 +46,10 @@ const ItemDetailContainer = ({ onAdd, onRemove }) => {
                 console.log(err);
             });
     }, [id]);
+
+    
+    
+        
     return (
         <Container
             maxWidth="xl"
